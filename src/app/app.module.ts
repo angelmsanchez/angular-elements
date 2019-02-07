@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 
-import { MessageComponent } from './components/message/message.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
-  declarations: [MessageComponent],
+  declarations: [CounterComponent],
   imports: [BrowserModule],
-  entryComponents: [MessageComponent]
+  entryComponents: [CounterComponent]
 })
 export class AppModule implements DoBootstrap {
 
@@ -16,7 +16,7 @@ export class AppModule implements DoBootstrap {
   ) { }
 
   ngDoBootstrap(): void {
-    const element = createCustomElement(MessageComponent, { injector: this.injector });
-    customElements.define('my-custom-element', element);
+    const element = createCustomElement(CounterComponent, { injector: this.injector });
+    customElements.define('my-counter-custom-element', element);
   }
 }
