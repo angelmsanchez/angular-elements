@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
+    "start:prod": "http-server ./src -o",
     "build": "ng build",
-    "build:prod": "ng build --prod --output-hashing none",
+    "build:prod": "ng build --prod",
+    "build:elements": "ng build --prod --output-hashing none && node concatenate.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -36,6 +38,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "concat": "^1.0.3",
+    "fs-extra": "^7.0.1",
+    "http-server": "^0.11.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",
